@@ -1,9 +1,9 @@
 fillup.js
 =========
 
-FillUp is a tiny (1 line!) jQuery plugin and pure HTML templater.
+*FillUp is a tiny (1 line!) jQuery plugin and pure HTML templater.*
 
-It actually clones a source div and fills up the destination div with that copy.
+The short story is that it just clones a source div and fills up the destination div with that copy -- and the long story is only slightly more complicated that that.
 
 How is this useful?
 -------------------
@@ -12,17 +12,23 @@ Let's say that you have an HTML page:
 
     <html>
         <body>
+
+            <!-- this is where you display everything -- your 'stage' -->
             <div class=stage></div>
+
+            <!-- this is where you keep all your templates -- offstage -->
             <div style="display:none">
+
                 <div class=page1-offstage>page1</div>
                 <div class=page2-offstage>page2</div>
                 <div class=page3-offstage>page3</div>
                 <div class=page4-offstage>page4</div>
+
             </div>
         </body>
     </html>
 
-Now you want to display page 2: *(note the class name without the "." or "-offstage")*
+Let's say that you want to display page 2: *(note the class name without the "." or "-offstage")*
 
     page2 = $(".stage").fillup("page2");
 
@@ -30,15 +36,17 @@ Now, any changes you make to page2 will *not* also be made in the offstage versi
 
     page2.html("<h2>page 2</h2>");
 
-The offstage version stays the same as it was originally, but the onstage version now has a headline.
+The offstage version stays the same as it was originally, but the onstage version now has a headline!
 
-You can create as many copies as you want with different classnames, *without trashing your original!*
+You can create as many copies as you want with different classnames, modify them individually, and attach event handlers to them all, *all without trashing your original!*
 
-(This is especially important when you start attaching methods to the DOM! Most HTML templaters can't actually work with real source HTML for just this reason.)
+(Most HTML templaters can't actually work with real source HTML for just this reason.)
 
-**In other words, this gives you pure HTML templates,.. except without templates! Simple, right?**
+**In other words, this gives you pure HTML templates,.. without complex templates. Simple, right?**
 
-And in one just action-packed line of code... but here's where it gets REALLY useful!
+You just use regular jquery code, CSS selectors, etc to modify your template. No variables, no weird template language, just clean separation of view (presentation/html) from controller logic (which stays javascript, where it should be).
+
+And in one just action-packed line of code... now, here's where it gets REALLY useful:
 
 Using FillUp with dynamic templates like forms
 ----------------------------------------------
