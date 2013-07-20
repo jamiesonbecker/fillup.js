@@ -1,7 +1,7 @@
 fillup.js
 =========
 
-*FillUp is a tiny (1 line!) jQuery plugin and pure HTML templater.*
+*FillUp is a tiny (1 line!) jQuery plugin and pure HTML templater.* That's right... 250 bytes!
 
 The short story is that it just clones a source div and fills up the destination div with that copy -- and the long story is only slightly more complicated that that.
 
@@ -138,11 +138,17 @@ This is also really useful if you're building a lot of drop-down menu entries, t
 How to Use
 ----------
 
-Just specify your offstage (template) class names with -offstage and ideally wrap them all in a display:none div. Then use fillup!
+1.  Include either the minified version or the regular version in your code:
 
-    $(destination).fillup(source)
+        <script src="https://raw.github.com/jamiesonbecker/fillup.js/master/fillup.js"></script>
 
-... where destination is the div that will get emptied and filled, and the source is the -offstage div that will get cloned.
+    The minified version is exactly the same as the original except the name is four bytes longer ;)
+
+2.  Just specify your offstage (template) class names with -offstage and ideally wrap them all in a display:none div. Then use fillup!
+
+        $(destination).fillup(source)
+
+    ... where destination is the div that will get emptied and filled, and the source is the -offstage div that will get cloned.
 
 
 Important notes
@@ -152,7 +158,9 @@ Important notes
 
     This is an important thing to realize if you're cloning things like `<form>`'s... they'll get converted to `<div>`'s! Instead, wrap the `<form>` in a `<div>` as shown above.
 
+
 2.  As always, you still need to be specific for inner elements. $("input") will still select all input's on the page! $(".contact1 input") would select all inputs in contact1, of course. If you're not specific about your top-level container, you could end up changing your original, or attaching methods to the wrong objects, so be careful about that.
+
 
 3.  Related to #2, if you notice weird behavior such as events that are firing on more than one div or previous data is coming in from offstage, you're probably modifying offstage elements without realizing it and since you can't see them it's not immediately obvious. Be careful to narrow down your targets -- that's why this plugin exists in the first place! Otherwise you could just .clone() and be done with it.
 
