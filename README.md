@@ -148,10 +148,13 @@ Important notes
 
 3.  Related to #2, if you notice weird behavior such as events that are firing on more than one div or previous data is coming in from offstage, you're probably modifying offstage elements without realizing it and since you can't see them it's not immediately obvious. Be careful to narrow down your targets -- that's why this plugin exists in the first place! Otherwise you could just .clone() and be done with it.
 
+
+
 Implications
 ------------
 
-Think about it... with this one-liner plugin and the formplode/formscrape plugins below, do you even need that huge framework anymore?
+Think about it... with this one-liner plugin and the formplode/formscrape plugins below, *do you even need that huge framework anymore?*
+
 
 
 Related
