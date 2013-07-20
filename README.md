@@ -3,7 +3,7 @@ fillup.js
 
 *FillUp is a tiny (1 line!) jQuery plugin and pure HTML templater.* That's right... 250 bytes!
 
-The short story is that it just clones a source div and fills up the destination div with that copy -- and the long story is only slightly more complicated that that.
+The short story is that it just clones a source div and fills up the destination div with that copy -- and the long story is only slightly more complicated than that.
 
 How is this useful?
 -------------------
