@@ -36,7 +36,7 @@ You can create as many copies as you want with different classnames, *without tr
 
 (This is especially important when you start attaching methods to the DOM! Most HTML templaters can't actually work with real source HTML for just this reason.)
 
-*In other words, this gives you pure HTML templates,.. except without templates! Simple, right?*
+**In other words, this gives you pure HTML templates,.. except without templates! Simple, right?**
 
 And in one just action-packed line of code... but here's where it gets REALLY useful!
 
@@ -153,7 +153,7 @@ Important notes
 Implications
 ------------
 
-Think about it... with this one-liner plugin and the formplode/formscrape plugins below, *do you even need that huge framework anymore?*
+Think about it... with this one-liner plugin and the formplode/formscrape plugins below, **do you even need that huge framework anymore?**
 
 
 
