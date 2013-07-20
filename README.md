@@ -140,9 +140,9 @@ Just specify your offstage (template) class names with -offstage and ideally wra
 Important notes
 ---------------
 
-1.  The source div (source-offstage) does not actually get cloned. A new <div> is created with the same classname, minus the '-offstage' suffix, and then all of the original source-offstage's children get cloned and placed inside of the new <div>.
+1.  The source div (source-offstage) does not actually get cloned. A new `<div>` is created with the same classname, minus the '-offstage' suffix, and then all of the original source-offstage's children get cloned and placed inside of the new `<div>`.
 
-    This is an important thing to realize if you're cloning things like <form>'s... they'll get converted to <div>'s! Instead, wrap the <form> in a <div> as shown above.
+    This is an important thing to realize if you're cloning things like `<form>`'s... they'll get converted to `<div>`'s! Instead, wrap the `<form>` in a `<div>` as shown above.
 
 2.  As always, you still need to be specific for inner elements. $("input") will still select all input's on the page! $(".contact1 input") would select all inputs in contact1, of course. If you're not specific about your top-level container, you could end up changing your original, or attaching methods to the wrong objects, so be careful about that.
 
