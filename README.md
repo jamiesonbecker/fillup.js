@@ -1,7 +1,7 @@
 fillup.js
 =========
 
-Fillup is a tiny (1 line!) jQuery plugin and pure HTML templater.
+FillUp is a tiny (1 line!) jQuery plugin and pure HTML templater.
 
 It actually clones a source div and fills up the destination div with that copy.
 
@@ -26,19 +26,21 @@ Now you want to display page 2: *(note the class name without the "." or "-offst
 
     page2 = $(".stage").fillup("page2");
 
-Now, any changes you make to page2 will not also be made in the offstage version.
+Now, any changes you make to page2 will *not* also be made in the offstage version -- it's a complete copy!
 
     page2.html("<h2>page 2</h2>");
 
-The offstage version stays the same. You can create as many copies as you want with different classnames, so *you don't accidentally edit your original!*
+The offstage version stays the same as it was originally, but the onstage version now has a headline.
 
-(This is especially important when you start attaching methods to the DOM; Most HTML templaters don't actually work with source HTML for just this reason.)
+You can create as many copies as you want with different classnames, *without trashing your original!*
+
+(This is especially important when you start attaching methods to the DOM! Most HTML templaters can't actually work with real source HTML for just this reason.)
 
 *In other words, this gives you pure HTML templates,.. except without templates! Simple, right?*
 
-But here's where it gets REALLY useful.
+And in one just action-packed line of code... but here's where it gets REALLY useful!
 
-Using Fillup with dynamic templates like forms
+Using FillUp with dynamic templates like forms
 ----------------------------------------------
 
 Let's say instead that you have an address book application:
