@@ -78,7 +78,7 @@ Now, you can do something like this:
     contact1 = $(".contact1").fillup("contactform");
     contact2 = $(".contact2").fillup("contactform");
 
-Now you have two form copies that are all independently identifiable -- just use the "contact1" classname however you like! Here's what the DOM looks like now:
+Now you have two form copies that are all independently identifiable -- just use the "contact1" classname however you like! Here's what the DOM looks like now (don't worry, this is being generated for you automagically)
 
 
     <html>
@@ -153,7 +153,7 @@ How to Use
     ... where destination is the div that will get emptied and filled, and the source is the -offstage div that will get cloned.
 
 
-Important notes
+IMPORTANT notes
 ---------------
 
 1.  The source div (source-offstage) does not actually get cloned. A new `<div>` is created with the same classname, minus the '-offstage' suffix, and then all of the original source-offstage's children get cloned and placed inside of the new `<div>`.
@@ -161,10 +161,15 @@ Important notes
     This is an important thing to realize if you're cloning things like `<form>`'s... they'll get converted to `<div>`'s! Instead, wrap the `<form>` in a `<div>` as shown above.
 
 
-2.  As always, you still need to be specific for inner elements. $("input") will still select all input's on the page! $(".contact1 input") would select all inputs in contact1, of course. If you're not specific about your top-level container, you could end up changing your original, or attaching methods to the wrong objects, so be careful about that.
+2.  As always, you still need to BE SPECIFIC!!! for inner elements. $("input") will still select all input's on the page! $(".contact1 input") would select all inputs in contact1, of course. If you're not specific about your top-level container, you could end up changing your original, or attaching methods to the wrong objects, so be careful about that.
+
+    One easy way to resolve this is to simply specify your search scope in jQuery: $("form", ".myonscreenform") or $(".myonscreenform form") will do the trick perfectly to make sure you're only looking at forms in the onscreen class.
+    
+    This is easy: once you build out your page with fillup.js, just open up your console and start using jQuery to grab different parts and make sure that you aren't grabbing the offscreen versions.
 
 
 3.  Related to #2, if you notice weird behavior such as events that are firing on more than one div or previous data is coming in from offstage, you're probably modifying offstage elements without realizing it and since you can't see them it's not immediately obvious. Be careful to narrow down your targets -- that's why this plugin exists in the first place! Otherwise you could just .clone() and be done with it.
+
 
 
 
