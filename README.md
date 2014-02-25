@@ -156,6 +156,9 @@ How to Use
 IMPORTANT notes
 ---------------
 
+IMPORTANT: WARNING: be sure to only use two class names (the source name and the word "offstage") in your outer div-wrapper. See the first note for details.
+
+
 1.  The source div (source-offstage) does not actually get cloned. A new `<div>` is created with the same classname, minus the '-offstage' suffix, and then all of the original source-offstage's children get cloned and placed inside of the new `<div>`.
 
     This is an important thing to realize if you're cloning things like `<form>`'s... they'll get converted to `<div>`'s! Instead, wrap the `<form>` in a `<div>` as shown above.
